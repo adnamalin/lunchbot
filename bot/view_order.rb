@@ -5,8 +5,9 @@ class ViewOrder < SlackRubyBot::Commands::Base
       order = Order.print_all_orders(data.channel)
       client.say(channel: data.channel, text: order)
     else
-      order = Order.find(match['expression']).print_single_order
-      client.say(channel: data.channel, text: order)
+      #how to handle if order is not found? checking order assignment does not work
+      order = Order.find(match['expression'])
+      client.say(channel: data.channel, text: order.print_single_order)
     end
    end
  end
