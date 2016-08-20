@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # Slack Bot
 gem 'slack-ruby-bot'
-gem 'celluloid-io'
+# gem 'celluloid-io'
+ gem 'faye-websocket'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
