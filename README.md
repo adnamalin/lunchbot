@@ -1,24 +1,7 @@
-# README
+# Luncherbot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![luncherbot](http://i.imgur.com/7eIWMmz.png)
 
-Things you may want to cover:
+*In Development*
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Luncherbot is a Slackbot that helps your team organize lunch orders! Add Luncherbot to any team and it's channels. 
