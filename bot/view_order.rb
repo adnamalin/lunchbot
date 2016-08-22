@@ -17,9 +17,7 @@ class ViewOrder < SlackRubyBot::Commands::Base
         client.say(channel: data.channel, text: order.first.print_single_order)
       else
         # TODO: how to send attachments? it's sending voer in json but the client is not parsing it to writing
-        p "-----------SENDING-------------"
-         client.say(channel: data.channel, text: "Sorry, I could not find that order in this channel.", attachments: [{"title": "The Further Adventures of Slackbot","author_name": "Stanford S. Strickland"}])
-        p "-----------SENDING-------------"
+         client.say(channel: data.channel, text: "Sorry, I could not find that order in this channel.")
       end
     end
    end
