@@ -1,7 +1,10 @@
 class Order < ApplicationRecord
 
-  def self.print_all_orders(channel)
-    orders = Order.where(channel: channel).order(id: :asc)
+  def self.order_by_channel(channel)
+    Order.where(channel: channel).order(id: :asc)
+  end
+
+  def self.print_all_orders(orders)
     orders.map {|o| "```Order ##{o.id}: #{o.name.capitalize} | #{o.restaurant.capitalize} at #{o.lunch_date.strftime("%B %d, %Y at %I:%M")}```"}.join(" ")
   end
 
