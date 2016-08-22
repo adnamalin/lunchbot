@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820172755) do
+ActiveRecord::Schema.define(version: 20160820200617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.string "name"
-    t.string "team"
-    t.string "owner"
-    t.string "restaurant"
-    t.date   "lunch_date"
+    t.string   "name"
+    t.string   "channel"
+    t.string   "owner"
+    t.string   "restaurant"
+    t.datetime "lunch_date"
+    t.string   "menu"
+    t.index ["channel"], name: "index_orders_on_channel", using: :btree
     t.index ["owner"], name: "index_orders_on_owner", using: :btree
-    t.index ["team"], name: "index_orders_on_team", using: :btree
   end
 
 end
