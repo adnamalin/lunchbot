@@ -9,7 +9,7 @@ class ViewOrder < SlackRubyBot::Commands::Base
         client.say(channel: data.channel, text: "No orders have been created for this channel")
       end
     else
-      #better way to handle order not fount? checking order assignment does not work
+      # TODO: find better way to handle order not found
       order = Order.order_by_channel(data.channel).where(id: match['expression'])
       if order != []
         client.say(channel: data.channel, text: order.first.print_single_order)
