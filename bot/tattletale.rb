@@ -4,6 +4,7 @@ $:.unshift File.dirname(__FILE__)
 require 'view_order'
 require 'create_order'
 require 'delete_order'
+require 'edit_order'
 
  Thread.abort_on_exception = true
 
