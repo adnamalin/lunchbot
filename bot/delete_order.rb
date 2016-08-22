@@ -1,4 +1,8 @@
+require_relative 'order_finder'
+
 class DeleteOrder < SlackRubyBot::Commands::Base
+  include OrderFinder
+
    command 'delete order' do |client, data, match|
       order = Order.order_by_channel(data.channel).where(id: match['expression'])
       if order != []
