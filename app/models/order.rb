@@ -18,8 +18,7 @@ class Order < ApplicationRecord
   end
 
   def print_items
-    self.items.map.with_index do |item, index| "#{index + 1} #{item.username}: #{item.name} #{item.notes} \n"
-    end.join("")
+    self.items.map.with_index {|item, index| "#{index + 1} #{item.username}: #{item.name} #{item.notes} \n"}.join("")
   end
 
 end
