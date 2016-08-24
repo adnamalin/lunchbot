@@ -11,7 +11,7 @@ class AddItem < SlackRubyBot::Commands::Base
     if order != []
       item = order.first.items.build(name: order_name, username: order_username, notes: order_notes, owner: data.user)
       if item.save
-        client.say(channel: data.channel, text: "#{order_username} has added her item to #{order.first.name}")
+        client.say(channel: data.channel, text: "#{order_username} has added their item to #{order.first.name.capitalize}")
       else
         #add validations: item name, username
         client.say(channel: data.channel, text: "Sorry, I couln't save that order. Check your commands")
