@@ -5,6 +5,7 @@ require 'view_order'
 require 'create_order'
 require 'delete_order'
 require 'edit_order'
+require 'add_item'
 
  Thread.abort_on_exception = true
 
