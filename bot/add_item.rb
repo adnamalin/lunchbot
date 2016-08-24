@@ -7,7 +7,7 @@ class AddItem < SlackRubyBot::Commands::Base
     order_username = order_details[1]
     order_name = order_details[2]
     order_notes = order_details[3]
-    order = Order.where(id: order_num)
+    order = Order.order_by_channel(data.channel).where(id: order_num)
     if order != []
       item = order.first.items.build(name: order_name, username: order_username, notes: order_notes, owner: data.user)
       if item.save
