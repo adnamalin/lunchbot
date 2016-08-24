@@ -10,11 +10,16 @@ class Order < ApplicationRecord
   end
 
   def print_single_order
-    "*Order ##{self.id}: #{self.name.capitalize} | #{self.restaurant.capitalize} at #{self.lunch_date.strftime("%B %d, %Y at %I:%M")}* \n #{self.menu} \n ```#{self.print_items}```"
+    details = "*Order ##{self.id}: #{self.name.capitalize} | #{self.restaurant.capitalize} at #{self.lunch_date.strftime("%B %d, %Y at %I:%M")}* \n #{self.menu}"
+    if self.items.any?
+      details += "\n ```#{self.print_items}```"
+    end
+    details
   end
 
   def print_items
-    self.items.map.with_index {|item, index| "#{index + 1} #{item.username}: #{item.name} (#{item.notes})\n"}.join("")
+    self.items.map.with_index do |item, index| "#{index + 1} #{item.username}: #{item.name} #{item.notes} \n"
+    end.join("")
   end
 
 end
