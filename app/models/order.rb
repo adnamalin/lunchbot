@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
-
+  has_many :items
+   
   def self.order_by_channel(channel)
     Order.where(channel: channel).order(id: :asc)
   end
