@@ -14,7 +14,7 @@ class Order < ApplicationRecord
   end
 
   def print_items
-    self.items.map {|i| "#{i.username}: #{i.name} (#{i.notes}) \n"}.join(" ")
+    self.items.map {|i| "#{i.username}: #{i.name} (#{i.notes})\n"}.join("")
   end
 
 end
