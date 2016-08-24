@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  has_many :items
+  has_many :items, dependent: :destroy 
 
   def self.order_by_channel(channel)
     Order.where(channel: channel).order(id: :asc)
@@ -14,7 +14,7 @@ class Order < ApplicationRecord
   end
 
   def print_items
-    self.items.map {|i| "#{i.username}: #{i.name} (#{i.notes})\n"}.join("")
+    self.items.map.with_index {|item, index| "#{index + 1} #{item.username}: #{item.name} (#{item.notes})\n"}.join("")
   end
 
 end
