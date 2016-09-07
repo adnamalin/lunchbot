@@ -7,6 +7,7 @@ require 'delete_order'
 require 'edit_order'
 require 'add_item'
 require 'delete_item'
+require 'edit_item'
 
  Thread.abort_on_exception = true
 
