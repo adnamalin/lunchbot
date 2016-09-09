@@ -35,8 +35,9 @@ gem 'slack-ruby-bot'
 gem 'faye-websocket'
 gem 'dotenv-rails', :groups => [:development, :test]
 
-#date handler 
+#date handler
 gem 'chronic'
+gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
