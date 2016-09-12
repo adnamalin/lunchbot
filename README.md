@@ -15,7 +15,7 @@ Luncherbot is a Slackbot that helps your team organize lunch orders! Add Luncher
 
 ```view all - list of all orders in this channel```
 
-```view <order number>** - list order details and items```
+```view <order number> - list order details and items```
 
 *Order and Item Creation are seperated by commas*
 
